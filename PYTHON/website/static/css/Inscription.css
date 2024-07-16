@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    color: rgb(14, 50, 117);
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: left;
+    padding: auto;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 80px); /* Adjusted for the title height */
+    align-items: center;
+    justify-content: center;
+}
+
+.image-section {
+    flex: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-section img {
+    width: 65%;
+}
+
+.form-section {
+    flex: 0.22; /* Reduced form section width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(14, 50, 117,0.6);
+}
+.form-section h2{
+    text-decoration: underline;
+    color: rgb(14, 50, 117);
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px; /* Reduced form width */
+}
+.form-section form p a{
+    text-align: center;
+    color: black;
+    padding: 10px;
+}
+.form-section form p{
+    text-align: center;
+    font-style: italic;
+    font-size: 11px;
+}
+
+.form-section label {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-section input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-section button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(14, 50, 117);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.form-section button:hover {
+    background-color: rgb(10, 40, 95);
+}

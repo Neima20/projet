@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, rgb(63, 113, 177)); /* Dégradé du blanc au bleu */
+}
+
+.profile-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.profile-form h2 {
+    margin-top: 0;
+    color: rgb(63, 113, 177);
+
+
+}
+
+.profile-picture {
+    margin: 20px 0;
+}
+
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile-picture text h4{
+    text-align: center;
+    margin-top: 2%;
+    font-weight: bold;
+}
+.profile-picture text p{
+    text-align: center;
+    margin-bottom: 60%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #3498db;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.additional-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(63, 113, 177);
+
+}
+
+.add-button {
+    background-color: rgb(63, 113, 177);
+
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.add-button .plus-symbol {
+    font-size: 20px;
+    margin-right: 5px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catégories</title>
+    <link rel="stylesheet" href="../CSS/rappel.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h1>TO-DO-LIST</h1>
+        <ul>
+            <li><a href="tableau.html"><img src="" alt="">Tableau de bord</a></li>
+            <li><a href="categorie.html">Catégories</a></li>
+            <li><a href="tache.html">Tâches</a></li>
+            <li><a href="#" class="active"><img src="../Images/" alt="">Rappel</a></li>
+            <li><a href="calendrier.html">Calendrier</a></li>
+            <li><a href="aide.html">Aide</a></li>
+            <li><a href="parametre.html">Paramètres</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="icons">
+            <a href="sidebar.html"><img src="../Images/menu1.png" alt="Menu"></a>
+            <a href="tache.html"><img src="../Images/2.png" alt="Calendrier"></a>
+            <img src="../Images/agenda1.webp" alt="Tâches">
+            <a href="profil.html"><img src="../Images/person2.jpg" alt="Profil"></a>
+        </div>
+        <header>
+            <div class="header-title">
+                <img src="../Images/rappel.jpg" alt="Logo" class="logo" width="45%" height="50px">
+                <h1>Rappel</h1>
+            </div>
+            <img src="../Images/delete.webp" alt="Banner" class="banner" width="15%" height="50px">
+        </header>
+        <div class="container">
+            <h2>Gestionnaire de Tâches</h2>
+            
+            <form id="taskForm">
+                <label for="category">Catégorie :</label>
+                <input type="text" id="category" name="category" required>
+                <br>
+                <label for="task">Tâche :</label>
+                <input type="text" id="task" name="task" required>
+                <br>
+                <label for="startDate">Date de Début :</label>
+                <input type="date" id="startDate" name="startDate" required>
+                <br>
+                <label for="endDate">Date de Fin :</label>
+                <input type="date" id="endDate" name="endDate" required>
+                <br>
+                <button type="submit">Ajouter Tâche</button>
+            </form>
+
+            <!-- Liste des tâches -->
+            <div id="taskList">
+                <!-- Les tâches ajoutées dynamiquement seront insérées ici -->
+            </div>
+        </div>
+
+        <footer>
+            <a href="AjouterRappel.html"><img src="../Images/+.jpg" alt="Image bas droite" class="footer-image"></a>
+        </footer>
+    </div>
+
+    <script src="../JS/rappel.js"></script>
+</body>
+</html>

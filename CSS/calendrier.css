@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    width: 230px;
+    background-color: rgb(63, 113, 177);
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h1 {
+    text-align: left;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color:darkblue;
+
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.icons img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+  /* Style de base du calendrier */
+  #calendar {
+    max-width: 10105px;
+    margin: 0px auto;
+    height: 60%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+  /* Style du titre du calendrier */
+  .fc-toolbar-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Style des boutons de navigation du calendrier */
+  .fc .fc-toolbar .fc-button {
+    background-color: darkblue;
+    color: #fff;
+    border-color: darkblue;
+  }
+  
+  .fc .fc-toolbar .fc-button:hover {
+    background-color: darkblue;
+    border-color: darkblue;
+  }
+  
+  /* Style des événements dans le calendrier */
+  .fc-event {
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  /* Couleurs des événements par catégorie */
+  .fc-event.blue {
+    background-color: darkblue;
+    color: #fff;
+  }
+  
+  .fc-event.green {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .fc-event.red {
+    background-color:darkblue;
+    color: #fff;
+  }
+  
+  .fc-event.orange {
+    background-color: #fd7e14;
+    color: #fff;
+  }
+  
+  .fc-event.yellow {
+    background-color: #ffc107;
+    color: #fff;
+  }
+  
+  /* Style des jours du calendrier */
+  .fc-daygrid-day {
+    padding: 8px;
+    text-align: center;
+  }
+  
+  /* Style pour mettre en valeur le jour actif */
+  .fc-day-today {
+    background-color: #f0f0f0;
+  }
+  
+  /* Style pour les numéros de semaine */
+  .fc-daygrid-week-number {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  /* Couleur du texte de l'en-tête du calendrier */
+  .fc-toolbar {
+    color: #343a40;
+  }
+  
+  /* Style des boutons pour changer de vue */
+  .fc .fc-toolbar .fc-button-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .fc .fc-toolbar .fc-button-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Style du sélecteur de vue */
+  .fc-view-selector {
+    margin-right: 20px;
+  }
+  
+  /* Style des cellules de l'en-tête des colonnes (jours de la semaine) */
+  .fc-col-header-cell-cushion {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Style des points pour les événements */
+  .fc .fc-event-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 2px;
+  }
+  
+  /* Style des bordures du calendrier */
+  .fc {
+    --fc-border-color: #ced4da;
+  }
+  
+  /* Hover sur les boutons de calendrier */
+  .fc .fc-toolbar .fc-button-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  

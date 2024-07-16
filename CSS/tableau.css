@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    width: 230px;
+    background-color: rgb(63, 113, 177);
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h1 {
+    text-align: left;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: darkblue;
+
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.icons img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: rgb(63, 113, 177);
+
+    box-shadow: 0 4px 8px rgba(247, 244, 244, 0.993);
+    border-radius: 10px;
+    text-align: center;
+    width: 19%;
+    height: 100px;
+}
+
+.card h3 {
+    margin-top: 0%;
+    color: white;
+}
+
+.card img {
+    width: 18%;
+    margin-top: 5px;
+    margin-left: 70%;
+}
+
+.chart-and-tasks {
+    display: flex;
+    align-items: flex-start;
+}
+
+.chart {
+    width: 30%;
+}
+
+.chart h4 {
+    margin-top: 0px;
+    color: rgb(63, 113, 177);
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.chart img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart canvas {
+    width: 100%;
+    height: auto;
+}
+
+.tasks-info {
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+.task-title {
+    color: rgb(63, 113, 177);
+
+    text-decoration: underline;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.task-counter {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    background-color: transparent;
+    border: 15px solid  rgb(63, 113, 177);
+
+    border-radius: 60%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.bottom-right {
+    position: fixed;
+    bottom: 10px; /* Ajustez la valeur selon vos besoins */
+    right: 10px;  /* Ajustez la valeur selon vos besoins */
+    width: 100px; /* Ajustez la taille selon vos besoins */
+    height: auto; /* Conserve les proportions de l'image */
+}

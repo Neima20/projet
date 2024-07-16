@@ -1,0 +1,35 @@
+<!-- templates/inscription.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - TO-DO-LIST</title>
+    <link rel="stylesheet" href="../static/css/inscription.css">
+</head>
+<body>
+    <div class="title">
+        <h1>TO-DO-LIST</h1>
+    </div>
+    <div class="container">
+        <div class="image-section">
+            <img src="../static/images/9.webp" alt="Image de gestion de tâche">
+        </div>
+        <div class="form-section">
+            <form method="POST" action="{{ url_for('inscription') }}">
+                <h2>Inscription</h2>
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+                <label for="confirm-password">Confirmer le mot de passe :</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <button type="submit">S'inscrire</button>
+                <p>Avez-vous déjà un compte? <a href="{{ url_for('login') }}">Connectez-vous!</a></p> 
+            </form>
+        </div>
+    </div>
+</body>
+</html>

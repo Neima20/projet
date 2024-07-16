@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #bdd5e6; /* Bleu clair */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 550px;
+}
+
+.delete-form {
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.delete-form h2 {
+    color: #3498db; /* Bleu */
+    margin-bottom: 20px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cancel-button, .delete-button {
+    background-color: #3498db; /* Bleu */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.cancel-button:hover, .delete-button:hover {
+    background-color: #297fb8; /* Bleu plus sombre au survol */
+}
