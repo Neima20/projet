@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - TO-DO-LIST</title>
+    <link rel="stylesheet" href="/Static/CSS/Inscription.css">
+</head>
+<body>
+    <div class="title">
+        <form action="" method="POST"></form>
+        <h1>TO-DO-LIST</h1>
+    </div>
+    <div class="container">
+        <div class="image-section">
+            <img src="/Static/Images/9.webp" alt="Image de gestion de tâche">
+        </div>
+        <div class="form-section">
+            <form action="{{ url_for('inscription') }}" method="post">
+                <h2>Inscription</h2>
+                <label for="lastname">Nom</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+                <label for="confirm-password">Confirmer le mot de passe</label>
+                <input type="password" id="passwordC" name="passwordC" required>
+                <button type="submit">S'inscrire</button>
+                p>Avez-vous déjà un compte? <a href="{{ url_for('login') }}">Connectez-vous!</a></p> 
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

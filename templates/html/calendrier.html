@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+    <link rel="stylesheet" href="/Static/CSS/calendrier.css">
+    <script src="/Static/JS/calendrier.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="sidebar">
+        <h1>TO-DO-LIST</h1>
+        <ul>
+            <li><a href="tableau.html"><img src="" alt="">Tableau de bord</a></li>
+            <li><a href="categorie.html"><img src="../Images/" alt="">Catégories</a></li>
+            <li><a href="tache.html">Tâches</a></li>
+            <li><a href="rappel.html">Rappels</a></li>
+            <li><a href="#" class="active"><img src="" alt="">Calendrier</a></li>
+            <li><a href="aide.html">Aide</a></li>
+            <li><a href="parametre.html">Paramètres</a></li>
+        </ul>
+    </div>    
+    <div class="main-content">
+        <div class="icons">
+            <a href="sidebar.html"><img src="/Static/Images/menu1.png" alt="Menu"></a>
+            <a href="tache.html"><img src="/Static/Images/2.png" alt="Calendrier"></a>
+            <img src="/Static/Images/agenda1.webp" alt="Tâches">
+            <a href="profil.html"><img src="/Static/Images/person2.jpg" alt="Profil"></a>
+        </div>
+
+    <script>
+         var calendar = new Calendar(calendarEl, {
+        dateClick: function() {
+          alert('a day has been clicked!');
+        }
+      });
+      calendar.on('dateClick', function(info) {
+  console.log('clicked on ' + info.dateStr);
+});
+calendar.next();
+document.getElementById('my-next-button').addEventListener('click', function() {
+  calendar.next();
+});
+var calendar = new Calendar(calendarEl, {
+  headerToolbar: { center: 'dayGridMonth,timeGridWeek' }, // buttons for switching between views
+
+  views: {
+    dayGridMonth: { // name of view
+      titleFormat: { year: 'numeric', month: '2-digit', day: '2-digit' }
+      // other view-specific options here
+    }
+  }
+});
+var calendar = new Calendar(calendarEl, {
+  views: {
+    dayGrid: {
+      // options apply to dayGridMonth, dayGridWeek, and dayGridDay views
+    },
+    timeGrid: {
+      // options apply to timeGridWeek and timeGridDay views
+    },
+    week: {
+      // options apply to dayGridWeek and timeGridWeek views
+    },
+    day: {
+      // options apply to dayGridDay and timeGridDay views
+    }
+  }
+});
+calendar.getOption('locale');
+calendar.setOption('locale', 'fr');
+
+    </script>
+    
+    <div id='calendar'></div>
+  </body>
+</html>
