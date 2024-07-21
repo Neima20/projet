@@ -17,7 +17,7 @@ db.init_app(app)
 
 @app.route('/')
 def connexion():
-    return render_template('connexion.html')
+    return render_template('html/pageConnexion.html')
 
 @app.route('/inscription', methods=['GET', 'POST'])
 def inscription():
