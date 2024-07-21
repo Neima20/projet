@@ -17,7 +17,7 @@ db.init_app(app)
 
 @app.route('/')
 def connexion():
-    return render_template('connexion.html')
+    return render_template('/templates/html/PageConnexion.html')
 
 @app.route('/inscription', methods=['GET', 'POST'])
 def inscription():
@@ -41,7 +41,7 @@ def inscription():
             flash('Vous êtes inscrit avec succès! Connectez-vous maintenant.', 'success')
             return redirect(url_for('login'))
     
-    return render_template('inscription.html', title='Inscription')
+    return render_template('/templates/html/Inscription.html' title='Inscription')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -63,7 +63,7 @@ def login():
         else:
             flash('Utilisateur non trouvé!', 'error')       
     
-    return render_template('connexion.html', title='Connexion')
+    return render_template('templates/html/PageConnexion.html', title='Connexion')
 
 if __name__ == '__main__':
     app.run(debug=True)
