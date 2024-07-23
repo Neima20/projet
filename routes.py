@@ -18,7 +18,7 @@ def login():
                 flash('Vous êtes connecté!', 'success')
                 # Stocker l'ID de l'utilisateur dans la session
                 session['user_id'] = user.id
-                return redirect(url_for('index'))  # Redirige vers 'index' après la connexion
+                return redirect(url_for('tableau'))  # Redirige vers 'index' après la connexion
             else:
                 flash('Mot de passe incorrect!', 'error')
         else:
@@ -70,3 +70,10 @@ def index():
         # Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
         flash('Veuillez vous connecter pour accéder à cette page.', 'error')
         return redirect(url_for('login'))
+
+
+
+@app.route('/tableBoard')
+def tableau():
+    
+    return render_template('html/tableau.html', title='table')
