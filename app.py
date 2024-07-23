@@ -10,6 +10,14 @@ app.secret_key = 'your_secret_key'
 # Initialisez db avec l'application Flask
 db.init_app(app)
 
+
+
+
+# Créer les tables
+with app.app_context():
+    db.create_all()
+    
+    
 # Importez vos routes après avoir initialisé db pour éviter les importations circulaires
 from routes import *
 

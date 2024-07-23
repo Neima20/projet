@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {% if title== 'table'%}   <link rel="stylesheet" href="{{ url_for('static', filename='CSS/tableau.css')}}">{%endif%}
+</head>
+<body>
+    <header>
+        <div class="sidebar">
+        <h1>TO-DO-LIST</h1>
+        <ul>
+            <li><a href="#" class=" {% if title== 'table'%} active {%endif%}"><img src="" alt="">Tableau de bord</a></li>
+            <li><a href="categorie.html" class=" {% if title== 'Categorie'%} active {%endif%}"><img src="../Images/" alt="">Catégories</a></li>
+            <li><a href="tache.html" class=" {% if title== 'Tache'%} active {%endif%}">Tâches</a></li>
+            <li><a href="rappel.html" class=" {% if title== 'Rappel'%} active {%endif%}">Rappels</a></li>
+            <li><a href="calendrier.html" class=" {% if title== 'calendrier'%} active {%endif%}">Calendrier</a></li>
+            <li><a href="aide.html" class=" {% if title== 'aide'%} active {%endif%}">Aide</a></li>
+            <li><a href="parametre.html" class=" {% if title== 'parametre'%} active {%endif%}">Paramètres</a></li>
+        </ul>
+    </div>    
+    <div class="main-content">
+        <div class="icons">
+            <a href="sidebar.html"><img src="/Static/Images/menu1.png" alt="Menu"></a>
+            <a href="tache.html"><img src="/Static/Images/2.png" alt="Calendrier"></a>
+            <img src="/Static/Images/agenda1.webp" alt="Tâches">
+            <a href="profil.html"><img src="/Static/Images/person2.jpg" alt="Profil"></a>
+        </div>
+       
+    </header>
+
+
+
+
+
+
+    <main>
+        {%block  main%}  {%endblock%}
+    </main>
+
+<footer>
+
+</footer>
+
+
+
+</body>
+</html>

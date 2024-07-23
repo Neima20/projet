@@ -18,7 +18,7 @@ def login():
                 flash('Vous êtes connecté!', 'success')
                 # Stocker l'ID de l'utilisateur dans la session
                 session['user_id'] = user.id
-                return redirect(url_for('index'))  # Redirige vers 'index' après la connexion
+                return redirect(url_for('tableau'))  # Redirige vers 'index' après la connexion
             else:
                 flash('Mot de passe incorrect!', 'error')
         else:
@@ -37,19 +37,24 @@ def inscription():
         confirm_password = request.form['confirm_password']
 
         # Vérifier si l'utilisateur existe déjà
-        existing_user = User.query.filter_by(email=email).first()
-        if existing_user:
-            flash('Cet email est déjà utilisé. Veuillez utiliser un autre email.', 'error')
-        elif password != confirm_password:
-            flash('Les mots de passe ne correspondent pas.', 'error')
-        else:
-            # Créer un nouvel utilisateur
-            new_user = User(username=username, email=email, password=password)
-            db.session.add(new_user)
-            db.session.commit()
-            flash('Vous êtes inscrit avec succès! Connectez-vous maintenant.', 'success')
-            return redirect(url_for('login'))  # Redirige vers 'login' après l'inscription
-    
+        try:
+            
+            
+            existing_user = User.query.filter_by(email=email).first()
+            if existing_user:
+                flash('Cet email est déjà utilisé. Veuillez utiliser un autre email.', 'error')
+            elif password != confirm_password:
+                flash('Les mots de passe ne correspondent pas.', 'error')
+            else:
+                # Créer un nouvel utilisateur
+                new_user = User(username=username, email=email, password=password)
+                db.session.add(new_user)
+                db.session.commit()
+                flash('Vous êtes inscrit avec succès! Connectez-vous maintenant.', 'success')
+                return redirect(url_for('login'))  # Redirige vers 'login' après l'inscription
+        except:
+            print("le table n'existe pas")
+            
     return render_template('html/Inscription.html', title='Inscription')
 
 # Route pour la page d'accueil après la connexion
@@ -65,3 +70,10 @@ def index():
         # Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
         flash('Veuillez vous connecter pour accéder à cette page.', 'error')
         return redirect(url_for('login'))
+
+
+
+@app.route('/tableBoard')
+def tableau():
+    
+    return render_template('html/tableau.html', title='table')

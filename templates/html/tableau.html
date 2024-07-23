@@ -1,32 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de bord - TO-DO-LIST</title>
-    <link rel="stylesheet" href="/Static/CSS/tableau.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-<div class="sidebar">
-        <h1>TO-DO-LIST</h1>
-        <ul>
-            <li><a href="#" class="active"><img src="" alt="">Tableau de bord</a></li>
-            <li><a href="categorie.html"><img src="../Images/" alt="">Catégories</a></li>
-            <li><a href="tache.html">Tâches</a></li>
-            <li><a href="rappel.html">Rappels</a></li>
-            <li><a href="calendrier.html">Calendrier</a></li>
-            <li><a href="aide.html">Aide</a></li>
-            <li><a href="parametre.html">Paramètres</a></li>
-        </ul>
-    </div>    
-    <div class="main-content">
-        <div class="icons">
-            <a href="sidebar.html"><img src="/Static/Images/menu1.png" alt="Menu"></a>
-            <a href="tache.html"><img src="/Static/Images/2.png" alt="Calendrier"></a>
-            <img src="/Static/Images/agenda1.webp" alt="Tâches">
-            <a href="profil.html"><img src="/Static/Images/person2.jpg" alt="Profil"></a>
-        </div>
+{% extends 'html/layout.html'%}
+
+
+{%block  main%}
         <div class="dashboard">
             <div class="card">
                 <img src="/Static/Images/termine.png" alt="Tâches terminées">
@@ -89,3 +64,4 @@
     </script>
 </body>
 </html>
+{%endblock%}
