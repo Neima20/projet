@@ -34,7 +34,7 @@ def inscription():
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
-        confirm_password = request.form['confirm-password']
+        confirm_password = request.form['confirm_password']
 
         # Vérifier si l'utilisateur existe déjà
         existing_user = User.query.filter_by(email=email).first()
