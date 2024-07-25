@@ -77,3 +77,30 @@ def index():
 def tableau():
     
     return render_template('html/tableau.html', title='table')
+
+
+
+@app.route('/categorie')
+def categorie():
+    
+    return render_template('html/categorie.html', title='categorie')
+
+@app.route('/tache')
+def tache():
+    
+    return render_template('html/tache.html', title='tache')
+
+@app.route('/rappel')
+def rappel():
+    
+    return render_template('html/rappel.html', title='rappel')
+
+@app.route('/aide')
+def aide():
+    
+    return render_template('html/aide.html', title='aide')
+
+@app.route('/parametre')
+def parametre():
+    
+    return render_template('html/parametre.html', title='parametre')

@@ -4,15 +4,15 @@
 {%block  main%}
         <div class="dashboard">
             <div class="card">
-                <img src="/Static/Images/termine.png" alt="Tâches terminées">
+                <img src="{{ url_for('static', filename='Images/termine.png') }}" alt="Tâches terminées">
                 <h3>0 <br>Tâches terminées</h3>
             </div>
             <div class="card">
-                <img src="/Static/Images/cours.png" alt="Tâches en cours">
+                <img src="{{ url_for('static', filename='Images/cours.png') }}" alt="Tâches en cours">
                 <h3>7<br>Tâches inachevées</h3>
             </div>
             <div class="card">
-                <img src="/Static/Images/cat.png" alt="Total des catégories">
+                <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="Total des catégories">
                 <h3>30<br>Total des catégories</h3>
             </div>
         </div>
