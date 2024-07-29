@@ -1,100 +1,75 @@
-{% extends 'layout.html'%}
+{% extends 'html/layout.html' %}
 
+{% block main %}
 
-{%block  main%}
-    <div class="container">
-        <h1>CATÉGORIES</h1>
-        <div class="categories">
-            <div class="category-card">
-                <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
-                <p>categorie1</p>
-                <div class="card-images">
-                    <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                    <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.png') }}" alt="Image 1"></a>
-                    
-                </div>
+<div class="container">
+    <h1>CATÉGORIES</h1>
+    <div class="categories">
+        <div class="category-card">
+            <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
+            <p>categorie1</p>
+            <div class="card-images">
+                <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
+                <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Image 1"></a>
             </div>
-            <div class="category-card">
-                <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
-                <p>categorie2</p>
-                <div class="card-images">
-                    <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                    <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.png') }}" alt="Image 1"></a>
-                    
-                </div>
-            <div class="category-card">
-                <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
-                <p>categorie3</p>
-                <div class="card-images">
-                    <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                    <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.png') }}" alt="Image 1"></a>
-                                            </div>
-            <div class="category-card">
-                <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
-                <p>categorie4</p>
-               <div class="card-images">
-                    <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                    <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.png') }}" alt="Image 1"></a>
-                                                    
+        </div>
+        <div class="category-card">
+            <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
+            <p>categorie2</p>
+            <div class="card-images">
+                <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
+                <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Image 1"></a>
             </div>
-            <div class="category-card">
-                <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
-                <p>categorie5</p>
-                <div class="card-images">
-                    <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                    <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.png') }}" alt="Image 1"></a>
-                    
-                </div>
-           <div class="category-card">
-                    <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
-                    <p>categorie6</p>
-                    <div class="card-images">
-                        <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                        <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.png') }}" alt="Image 1"></a>
-                        
-                    </div>
-            <div class="category-card">
-                        <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
-                        <p>categorie7</p>
-                        <div class="card-images">
-                            <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                            <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.png') }}" alt="Image 1"></a>
-                            
-                    </div>
-            <div class="category-card">
-                        <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
-                        <p>categorie8</p>
-                        <div class="card-images">
-                            <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                            <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.png') }}" alt="Image 1"></a>
-                            
-                        </div>
-         <div class="category-card">
-                            <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
-                            <p>categor1</p>
-                            <div class="card-images">
-                                <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                                <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.png') }}" alt="Image 1"></a>
-                                
-                            </div>
-            <div class="category-card">
-                <img src="/Static/Images/cat.png" alt="">
-                <p>Catégorie 3</p>
-                <div class="card-images">
-                    <a href="ModifierCategorie.html"><img src="/Static/Images/upadate.png" alt="Image 2"></a>
-                    <a href="SupprimeCategorie.html"><img src="/Static/Images/delete.webp" alt="Image 1"></a>                </div>
-            </div> 
-            <div class="category-card">
-                <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
-                <p>categorie1</p>
-                <div class="card-images">
-                    <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                    <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.png') }}" alt="Image 1"></a>
-                    
-                </div>
-            
+        </div>
+        <div class="category-card">
+            <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
+            <p>categorie3</p>
+            <div class="card-images">
+                <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
+                <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Image 1"></a>
+            </div>
+        </div>
+        <div class="category-card">
+            <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
+            <p>categorie4</p>
+            <div class="card-images">
+                <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
+                <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Image 1"></a>
+            </div>
+        </div>
+        <div class="category-card">
+            <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
+            <p>categorie5</p>
+            <div class="card-images">
+                <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
+                <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Image 1"></a>
+            </div>
+        </div>
+        <div class="category-card">
+            <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
+            <p>categorie6</p>
+            <div class="card-images">
+                <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
+                <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Image 1"></a>
+            </div>
+        </div>
+        <div class="category-card">
+            <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
+            <p>categorie7</p>
+            <div class="card-images">
+                <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
+                <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Image 1"></a>
+            </div>
+        </div>
+        <div class="category-card">
+            <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
+            <p>categorie8</p>
+            <div class="card-images">
+                <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
+                <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Image 1"></a>
+            </div>
         </div>
     </div>
-    <a href="AjouterCategorie.html"><img src="{{ url_for('static', filename='Images/+.jpg)}}" alt="Image en bas à droite" class="bottom-right"></a>
-</body>
-</html>
+    <a href="/categories"><img src="{{ url_for('static', filename='Images/+.jpg') }}" alt="Image en bas à droite" class="bottom-right"></a>
+</div>
+{% endblock %}
