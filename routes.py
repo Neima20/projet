@@ -163,3 +163,26 @@ def categories():
     
     categories = Category.query.all()
     return render_template('html/AjouterCategorie.html', form=form, categories=categories)
+
+
+
+
+# # Modifier un CATEGORIE:
+# @app.route('/modifierC/<int:category_id>', methods=['GET'])
+# def modifierC(category_id):
+#     category = Category.query.get_or_404(category_id)
+#     return render_template('html/ModifierCategorie.html', category=category)
+# @app.route('/modifier/<int:category_id>', methods=['POST'])
+# def modifier(category_id):
+#     category = Category.query.get_or_404(category_id)
+#     new_name = request.form.get('name')
+
+#     # Vérifiez si le nom est déjà utilisé par une autre catégorie
+#     if Category.query.filter_by(name=new_name).first():
+#         flash('Ce nom de catégorie est déjà utilisé.', 'error')
+#         return redirect(url_for('modifierC', category_id=category_id))
+
+#     category.name = new_name
+#     db.session.commit()
+#     flash('Catégorie mise à jour avec succès!', 'success')
+#     return redirect(url_for('categories'))
