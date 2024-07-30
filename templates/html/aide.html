@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aide - Gestion de Tâches</title>
-    <link rel="stylesheet" href="/Static/CSS/aide.css">
-</head>
-<body>
-    <div class="sidebar">
-        <h1>TO-DO-LIST</h1>
-        <ul>
-            <li><a href="tableau.html"><img src="../Images/" alt="">Tableau de bord</a></li>
-            <li><a href="categorie.html"><img src="../Images/" alt="">Catégories</a></li>
-            <li><a href="tache.html">Tâches</a></li>
-            <li><a href="rappel.html">Rappels</a></li>
-            <li><a href="aide.html" class="active">Aide</a></li>
-            <li><a href="parametre.html">Paramètres</a></li>
-        </ul>
-    </div>
+
+
+{% extends 'html/layout.html'%}
+
+
+{%block  main%}
     <div class="main-content">
         <h1>Guide d'Aide - Gestion de Tâches</h1>
         <div class="section">
@@ -46,5 +32,4 @@
             <p>Dans la section "Paramètres", vous pouvez ajuster les préférences de l'application, telles que le thème, la langue et les notifications.</p>
         </div>
     </div>
-</body>
-</html>
+    {%endblock%}

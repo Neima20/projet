@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter Catégorie</title>
-    <link rel="stylesheet" href="/Static/CSS/AjouterCategorie.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/AjouterCategorie.css')}}">
 </head>
 <body>
     <div class="container">
         <h1>Créer une Catégorie</h1>
-        <form class="category-form">
+        <form method="POST" class="category-form">
+            {{ form.hidden_tag() }}
             <div class="form-group">
-                <label for="category-name">Nom de la catégorie :</label>
-                <input type="text" id="category-name" name="category-name" placeholder="Entrez ici" required>
+                <label for="category-name">{{ form.name.label }} :</label>
+                {{ form.name(id="category-name", placeholder="Entrez ici") }}
+                {% for error in form.name.errors %}
+                    <span style="color:darkblue;">{{ error }}</span>
+                {% endfor %}
             </div>
             <div class="form-buttons">
-                <p>Annuler</p>
                 <button type="submit" class="submit-button">Enregistrer</button>
+                <button type="button">Annuler</button>
             </div>
         </form>
     </div>
+    <script src="{{ url_for('static', filename='JS/AjouterCategorie.js')}}"></script>
 </body>
 </html>

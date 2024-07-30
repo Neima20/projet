@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compte Utilisateur - Gestion de Tâches</title>
-    <link rel="stylesheet" href="/Static/CSS/Compte.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Compte.css') }}">
 </head>
 <body>
     <div class="container">
         <div class="profile">
-            <img src="/Static/Images/person2.jpg" alt="Photo de profil" class="profile-photo">
+            <img src="{{ url_for('static', filename='Images/person2.jpg') }}" alt="Photo de profil" class="profile-photo">
             <h2>Votre Compte</h2>
             <form>
                 <div class="form-group">
