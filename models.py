@@ -18,19 +18,13 @@ class User(db.Model):
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False, unique=True)
+    name = db.Column(db.String(100), nullable=False)
+    tasks = db.relationship('Task', backref='category', lazy=True)
 
-    def __repr__(self):
-        return f'<Category {self.name}>'
-    
-# Définir le modèle
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
-    description = db.Column(db.String(100), nullable=True)
-    due_date = db.Column(db.Date, nullable=True)
-
-    def __repr__(self):
-        return f'<Task {self.title}>'
-
-
+    description = db.Column(db.Text, nullable=False)
+    start_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    end_date = db.Column(db.DateTime, nullable=True)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
