@@ -4,38 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créer une Tâche</title>
-    <link rel="stylesheet" href="/Static/CSS/Ajoutertache.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Ajoutertache.css') }}">
 </head>
 <body>
     <div class="container">
         <h2>Créer une Tâche</h2>
-        <form action="#" method="POST" class="task-form">
+        <form action="{{ url_for('add_task') }}" method="POST" class="task-form">
+            {{ form.hidden_tag() }}
             <div class="form-group">
                 <label for="task-name">Nom de la Tâche :</label>
-                <input type="text" id="task-name" name="task-name" required>
+                {{ form.title(class_="form-control", id="task-name") }}
             </div>
             <div class="form-group">
-                <label for="start-date">Date de début :</label>
-                <input type="date" id="start-date" name="start-date" required>
+                <label for="description">Description :</label>
+                {{ form.description(class_="form-control", id="description") }}
             </div>
             <div class="form-group">
-                <label for="end-date">Date de fin :</label>
-                <input type="date" id="end-date" name="end-date" required>
+                <label for="start-date">Date de Début :</label>
+                {{ form.start_date(class_="form-control", id="start-date") }}
             </div>
-            
+            <div class="form-group">
+                <label for="end-date">Date de Fin :</label>
+                {{ form.end_date(class_="form-control", id="end-date") }}
+            </div>
             <div class="form-group">
                 <label for="category">Choisir une Catégorie :</label>
-                <select id="category" name="category" required>
-                    <option value="" selected disabled>Sélectionner une catégorie</option>
-                </select>
+                {{ form.category(class_="form-control", id="category") }}
             </div>
             <div class="form-buttons">
-                <button type="submit" class="add-button">Annuler</button>
-                <button type="button" class="cancel-button">Ajouter</button>
+                <button type="submit" class="add-button">Ajouter</button>
+                <a href="{{ url_for('tache') }}" class="cancel-button">Annuler</a>
             </div>
         </form>
     </div>
-
-    <script src="/Static/JS/Ajoutertache.js"></script> 
+    <script src="{{ url_for('static', filename='JS/Ajoutertache.js') }}"></script>
 </body>
 </html>

@@ -3,7 +3,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from app import app, db
 from models import User
 from models import Category
+# from models import Task
 from forms import CategoryForm
+from forms import EditCategoryForm
+from forms import DeleteCategoryForm
+from forms import TaskForm
 
 # Route pour la page de connexion
 @app.route('/')
@@ -170,23 +174,90 @@ def categories():
 
     
 
+@app.route('/edit_category/<int:category_id>', methods=['GET', 'POST'])
+def edit_category(category_id):
+    category = Category.query.get_or_404(category_id)
+    form = EditCategoryForm(obj=category)
+    
+    if form.validate_on_submit():
+        category.name = form.name.data
+        db.session.commit()
+        flash('Category updated successfully!', 'success')
+        return redirect(url_for('categorie'))
 
-# # Modifier un CATEGORIE:
-# @app.route('/modifierC/<int:category_id>', methods=['GET'])
-# def modifierC(category_id):
-#     category = Category.query.get_or_404(category_id)
-#     return render_template('html/ModifierCategorie.html', category=category)
-# @app.route('/modifier/<int:category_id>', methods=['POST'])
-# def modifier(category_id):
-#     category = Category.query.get_or_404(category_id)
-#     new_name = request.form.get('name')
+    return render_template('html/ModifierCategorie.html', form=form, category=category)
 
-#     # Vérifiez si le nom est déjà utilisé par une autre catégorie
-#     if Category.query.filter_by(name=new_name).first():
-#         flash('Ce nom de catégorie est déjà utilisé.', 'error')
-#         return redirect(url_for('modifierC', category_id=category_id))
 
-#     category.name = new_name
+@app.route('/delete_category/<int:category_id>', methods=['GET', 'POST'])
+def delete_category(category_id):
+    category = Category.query.get_or_404(category_id)
+    form = DeleteCategoryForm()
+
+    if form.validate_on_submit():
+        db.session.delete(category)
+        db.session.commit()
+        flash('Category deleted successfully!', 'success')
+        return redirect(url_for('categorie'))
+
+    return render_template('html/SupprimeCategorie.html', form=form, category=category)
+
+
+
+
+
+
+
+
+
+
+# tache
+
+
+
+
+# @app.route('/add_task', methods=['GET', 'POST'])
+# def add_task():
+#     form = TaskForm()
+
+#     # Charger les catégories depuis la base de données pour le champ 'category'
+#     form.category.choices = [(c.id, c.name) for c in Category.query.all()]
+
+#     if form.validate_on_submit():
+#         task = Task(
+#             title=form.title.data,
+#             description=form.description.data,
+#             start_date=form.start_date.data,
+#             end_date=form.end_date.data,
+#             category_id=form.category.data  # Assurez-vous que Task a un attribut category_id
+#         )
+#         db.session.add(task)
+#         db.session.commit()
+#         flash('Tâche ajoutée avec succès!', 'success')
+#         return redirect(url_for('tache'))  # Assurez-vous que 'tache' est un point de terminaison valide
+     
+#     return render_template('html/Ajoutertache.html', form=form)
+
+
+# @app.route('/task/edit/<int:task_id>', methods=['GET', 'POST'])
+# def edit_task(task_id):
+#     task = Task.query.get_or_404(task_id)
+#     form = TaskForm(obj=task)
+#     if form.validate_on_submit():
+#         task.title = form.title.data
+#         task.description = form.description.data
+#         task.due_date = form.due_date.data
+#         db.session.commit()
+#         flash('Task updated successfully!', 'success')
+#         return redirect(url_for('list_tasks'))
+#     return render_template('edit_task.html', form=form, task=task)
+
+# @app.route('/task/delete/<int:task_id>', methods=['POST'])
+# def delete_task(task_id):
+#     task = Task.query.get_or_404(task_id)
+#     db.session.delete(task)
 #     db.session.commit()
-#     flash('Catégorie mise à jour avec succès!', 'success')
-#     return redirect(url_for('categories'))
+#     flash('Task deleted successfully!', 'success')
+#     return redirect(url_for('list_tasks'))
+
+# if __name__ == '__main__':
+#     app.run(debug=True)

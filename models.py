@@ -1,7 +1,8 @@
 from sqlalchemy import Column, Integer, String
 from flask_sqlalchemy import SQLAlchemy
-
+from datetime import datetime
 db = SQLAlchemy()
+from app import db
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -22,3 +23,14 @@ class Category(db.Model):
     def __repr__(self):
         return f'<Category {self.name}>'
     
+# Définir le modèle
+class Task(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(100), nullable=True)
+    due_date = db.Column(db.Date, nullable=True)
+
+    def __repr__(self):
+        return f'<Task {self.title}>'
+
+

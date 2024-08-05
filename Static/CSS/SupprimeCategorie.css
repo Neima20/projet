@@ -24,24 +24,26 @@ body {
 
 .delete-form h2 {
     color: rgb(63, 113, 177);
-
     margin-bottom: 20px;
 }
 
 .form-buttons {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    gap: 20px; /* Spacing between buttons */
 }
 
 .cancel-button, .delete-button {
     background-color: rgb(63, 113, 177);
-
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block; /* Ensure proper alignment */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .cancel-button:hover, .delete-button:hover {

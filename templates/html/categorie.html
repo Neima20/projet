@@ -10,8 +10,13 @@
             <img src="{{ url_for('static', filename='Images/cat.png') }}" alt="">
             <p>{{category.name}}</p>
             <div class="card-images">
-                <a href="/modifierC"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
-                <a href="/DeleteC"><img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Image 1"></a>
+                <a href="{{ url_for('edit_category', category_id=category.id) }}">
+                    <img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2">
+                </a>
+                <a href="{{ url_for('delete_category', category_id=category.id) }}">
+                    <img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Delete">
+                </a>
+                
             </div>
         </div>
         {%endfor%}

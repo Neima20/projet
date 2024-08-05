@@ -1,151 +1,79 @@
+/* Styles globaux */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    display: flex;
-}
-
-.sidebar {
-    width: 230px;
-    background-color: white;                                           
-    color: white;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.sidebar h1 {
-    text-align: left;
-    text-decoration: underline;
-    font-weight: bold;
-    margin-bottom: 20px; /* Ajout d'une marge en bas pour séparation visuelle */
-}
-
-.sidebar ul {
-    list-style: none;
+    background-color: #f8f9fc;
+    color: #333;
+    margin: 0;
     padding: 0;
 }
 
-.sidebar ul li {
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #0056b3; /* Bleu principal */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
     margin-bottom: 15px;
 }
 
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    display: flex; /* Utilisation de flexbox pour aligner icône et texte */
-    align-items: center; /* Centrer verticalement */
-    padding: 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease; /* Transition fluide pour l'effet hover */
-}
-
-.sidebar ul li a:hover, .sidebar ul li a.active {
-    background-color: darkblue;
-}
-
-.main-content {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.icons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.icons img {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
-
-.main-content h2 {
-    font-size: 1.6rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-bottom: 20px;
-    color: rgb(60, 60, 199);
-    text-decoration: underline;
-}
-
-.menu-links {
-    list-style: none;
-    padding: 0;
-}
-
-.nav-link {
-    margin-bottom: 12px; /* Espacement entre chaque lien */
-}
-
-.nav-link a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: rgb(95, 95, 218); /* Couleur du texte */
-    transition: color 0.3s ease; /* Transition pour le changement de couleur */
-}
-
-.nav-link a:hover {
-    color: rgb(40, 21, 211); /* Changement de couleur au survol */
-}
-
-.nav-link .bx {
-    font-size: 32px; /* Taille de l'icône */
-    margin-right:25px; /* Espacement entre l'icône et le texte */
-}
-.main-content {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: rgb(231, 237, 242); /* Couleur de fond du tableau bleu */
-    border-left: 1px solid #ddd; /* Bordure à gauche pour séparation */
-}
-
-.profile-info {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.profile-info img {
-    width: 100px; /* Ajustement de la taille de l'image */
-    height: 100px;
-    border-radius: 50%; /* Rend l'image ronde */
-    margin-bottom: 10px;
-}
-
-.profile-info h2 {
+.form-group label {
+    display: block;
     margin-bottom: 5px;
-    font-size: 1.4rem;
-    color: rgb(60, 60, 199);
+    font-weight: bold;
 }
 
-.profile-info p {
-    margin: 0;
-    color: rgb(95, 95, 218);
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.menu-links {
-    list-style: none;
-    padding: 0;
+.form-buttons {
+    text-align: center;
+    margin-top: 20px;
 }
 
-.nav-link {
-    margin-bottom: 12px; /* Espacement entre chaque lien */
-}
-
-.nav-link a {
-    display: flex;
-    align-items: center;
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
     text-decoration: none;
-    color: rgb(95, 95, 218); /* Couleur du texte */
-    transition: color 0.3s ease; /* Transition pour le changement de couleur */
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
 }
 
-.nav-link a:hover {
-    color: darkblue; /* Changement de couleur au survol */
+.btn-primary {
+    background-color: #0056b3; /* Bleu principal */
 }
 
-.nav-link.active a {
-    color: darkblue; /* Couleur du lien actif */
+.btn-primary:hover {
+    background-color: #003d80; /* Bleu plus foncé */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Gris */
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Gris foncé */
 }

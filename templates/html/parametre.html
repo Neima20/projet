@@ -1,85 +1,34 @@
-{% extends 'html/layout.html'%}
+{% extends 'html/layout.html' %}
 
-
-{%block  main%}
-        <h2>Paramètre</h2>
-        <ul class="menu-links">
-            <li class="nav-link">
-                <a href="Compte.html">
-                    <i class='bx bxs-user'></i>
-                    <span class="texts nav-text">Votre Compte</span>
-                </a>
-            </li>
-            <li class="nav-link">
-                <a href="Theme.html">
-                    <i class='bx bxs-paint'></i>
-                    <span class="texts nav-text">Thème</span>
-                </a>
-            </li>
-            <li class="nav-link">
-                <a href="#">
-                    <i class='bx bx-search icon'></i>
-                    <span class="texts nav-text">Recherche</span>
-                </a>
-            </li>
-         
-            <li class="nav-link">
-                <a href="#">
-                    <i class='bx bx-world'></i>
-                    <span class="texts nav-text">Langue</span>
-                </a>
-            </li>
-            <li class="nav-link">
-                <a href="#">
-                    <i class='bx bxs-hide' style='color:#254d9c' ></i>
-                    <span class="texts nav-text">Cache une tache</span>
-                </a>
-            </li>
-            <li class="nav-link">
-                <a href="#">
-                    <i class='bx bxs-bell-ring icon'></i>
-                    <span class="texts nav-text">Active la Notification&Rappel</span>
-                </a>
-            </li>
-           
-            <li class="nav-link">
-                <a href="#">
-                    <i class='bx bx-lock' style='color:#254d9c' ></i>
-                    <span class="texts nav-text">Modifier le mot de passe</span>
-                </a>
-            </li>
-            <li class="nav-link">
-                <a href="#">
-                    <i class='bx bx-calendar-check'></i>
-                    <span class="texts nav-text">Calendrier</span>
-                </a>
-            </li>
-            <li class="nav-link">
-                <a href="#">
-                    <i class='bx bx-moon' style='color:#254d9c'  ></i>
-                    <span class="texts nav-text">Mode Sombre</span>
-                </a>
-            </li>
-            <li class="nav-link">
-                <a href="#">
-                    <i class='bx bxs-trash'></i>
-                    <span class="texts nav-text">Corbeille</span>
-                </a>
-            </li>
-            <li class="nav-link">
-                <a href="#">
-                    <i class='bx bx-power-off icon'></i>
-                    <span class="texts nav-text">Déconnexion</span>
-                </a>
-            </li>
-        </ul>
-    
-   </div>
- 
-    
-
-    
-</body>
-</html>
-
-{%endblock%}
+{% block main %}
+<div class="container">
+    <h2>Paramètres de Compte</h2>
+    <form action="{{ url_for('update_account') }}" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <label for="username">Nom d'utilisateur :</label>
+            {{ form.username(class_="form-control", id="username") }}
+        </div>
+        <div class="form-group">
+            <label for="email">Email :</label>
+            {{ form.email(class_="form-control", id="email") }}
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe actuel :</label>
+            {{ form.password(class_="form-control", id="password", type="password") }}
+        </div>
+        <div class="form-group">
+            <label for="new_password">Nouveau mot de passe :</label>
+            {{ form.new_password(class_="form-control", id="new_password", type="password") }}
+        </div>
+        <div class="form-group">
+            <label for="confirm_new_password">Confirmer le nouveau mot de passe :</label>
+            {{ form.confirm_new_password(class_="form-control", id="confirm_new_password", type="password") }}
+        </div>
+        <div class="form-buttons">
+            <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary">Déconnexion</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
