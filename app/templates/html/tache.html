@@ -1,0 +1,21 @@
+{% extends 'html/layout.html'%}
+
+
+{%block  main%}
+    <div class="container">
+        <h1>Mes Tâches</h1>
+        <div class="categories">
+            <div class="category-card">
+                <img src="{{ url_for('static', filename='Images/stylo.png') }}" alt="">
+                <p>tâche 1</p>
+                <div class="card-images">
+                    <a href="ModifierTache.html"><img src="{{ url_for('static', filename='Images/upadate.png') }}" alt="Image 2"></a>
+                    <a href="SupprimeTache.html"><img src="{{ url_for('static', filename='Images/delete.webp') }}" alt="Image 1"></a>
+                    
+                </div>
+            </div>
+    </div>
+    <a href="{{url_for('add_task') }}"><img src="{{ url_for('static', filename='Images/+.jpg') }}"alt="Image en bas à droite" class="bottom-right"></a>
+</body>
+</html>
+{%endblock%}

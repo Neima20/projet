@@ -1,0 +1,32 @@
+from sqlalchemy import Column, Integer, String
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+from . import db
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(60), nullable=False)
+    tasks = db.relationship('Task', backref='user',cascade="all,delete", lazy=True)
+    categores = db.relationship('Category', backref='user',cascade="all,delete", lazy=True)
+    def __repr__(self):
+        return f"User(id={self.id}, username='{self.username}', email='{self.email}')"
+
+
+
+
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    tasks = db.relationship('Task', cascade="all,delete",backref='category', lazy=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+class Task(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    start_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    end_date = db.Column(db.DateTime, nullable=True)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)

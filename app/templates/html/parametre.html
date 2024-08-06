@@ -1,0 +1,34 @@
+{% extends 'html/layout.html' %}
+
+{% block main %}
+<div class="container">
+    <h2>Paramètres de Compte</h2>
+    <form action="{{ url_for('update_account') }}" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <label for="username">Nom d'utilisateur :</label>
+            {{ form.username(class_="form-control", id="username") }}
+        </div>
+        <div class="form-group">
+            <label for="email">Email :</label>
+            {{ form.email(class_="form-control", id="email") }}
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe actuel :</label>
+            {{ form.password(class_="form-control", id="password", type="password") }}
+        </div>
+        <div class="form-group">
+            <label for="new_password">Nouveau mot de passe :</label>
+            {{ form.new_password(class_="form-control", id="new_password", type="password") }}
+        </div>
+        <div class="form-group">
+            <label for="confirm_new_password">Confirmer le nouveau mot de passe :</label>
+            {{ form.confirm_new_password(class_="form-control", id="confirm_new_password", type="password") }}
+        </div>
+        <div class="form-buttons">
+            <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
+            <a href="{{ url_for('log') }}" class="btn btn-secondary">Déconnexion</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
